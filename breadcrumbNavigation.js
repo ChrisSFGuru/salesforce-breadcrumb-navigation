@@ -205,13 +205,15 @@ export default class BreadcrumbNavigation extends LightningElement {
     createCaseFileBreadcrumb() {
         console.log('🍞 createCaseFileBreadcrumb started');
         console.log('!!!! This siteBaseUrl === ',  this.siteBaseUrl);
+
+        const caseFileId = this._caseFileIdFromLookup || this.recordId;
         
-        if (!this.recordId) return null;
+        if (!this.caseFileId) return null;
         
         return {
             label: 'Case File',
             name: 'caseFile',
-            href: `${this.siteBaseUrl}/case-file/${this.recordId || ''}`,
+            href: `${this.siteBaseUrl}/case-file/${caseFileId || ''}`,
             id: this.recordId
         };
     }
