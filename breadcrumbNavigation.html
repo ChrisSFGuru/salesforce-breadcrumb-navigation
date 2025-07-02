@@ -1,0 +1,12 @@
+<template>
+    <lightning-breadcrumbs>
+        <template for:each={breadcrumbs} for:item="crumbs">
+            <lightning-breadcrumb
+                key={crumbs.id}
+                label={crumbs.label}
+                name={crumbs.name}
+                href={crumbs.href}>
+            </lightning-breadcrumb>
+        </template>
+    </lightning-breadcrumbs>
+</template>
